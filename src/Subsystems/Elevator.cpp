@@ -7,6 +7,12 @@ Elevator::Elevator() :
 		s1Encoder(new Encoder(SCREW_1_ENCODER_1, SCREW_1_ENCODER_2)),
 		s2Encoder(new Encoder(SCREW_2_ENCODER_1, SCREW_2_ENCODER_2)), clawControl(false)
 {
+	s1Encoder->SetDistancePerPulse(1.0);
+	s2Encoder->SetDistancePerPulse(1.0);
+}
+
+double Elevator::getS2Distance(){
+	return s2Encoder->GetDistance();
 }
 
 void Elevator::clawOn()

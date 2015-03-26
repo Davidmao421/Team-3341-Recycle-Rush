@@ -46,6 +46,7 @@ private:
 			autonomousCommand->Cancel();
 		CommandBase::drive->ResetEncoders();
 		CommandBase::gyro->ResetGyro();
+		printf("Ticks: %f", CommandBase::elevator->getS2Distance());
 	}
 
 	void TeleopPeriodic()
@@ -60,7 +61,7 @@ private:
 
 		//printf("Gyro Angle: %f\n", CommandBase::gyro->GetAngle());
 		Scheduler::GetInstance()->Run();
-		CommandBase::ir->printValues();
+		//CommandBase::ir->printValues();
 	}
 
 	void TestPeriodic()

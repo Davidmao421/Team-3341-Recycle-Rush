@@ -25,6 +25,7 @@ public:
 	void clawOn();
 	void clawOff();
 	void moveElevator(float speed);
+	double getS2Distance();
 };
 
 #endif
